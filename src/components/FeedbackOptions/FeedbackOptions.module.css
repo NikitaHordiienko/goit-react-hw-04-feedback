@@ -1,0 +1,32 @@
+.button-list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.button {
+    padding: 5px 15px;
+    text-transform: capitalize;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.button-list__item{
+    border-radius: 4px;
+}
+
+.button-list__item:first-child {
+    background-color: green;    
+}
+
+.button-list__item:nth-child(2) {
+    background-color: blue;
+}
+
+.button-list__item:last-child {
+    background-color: red;
+}
