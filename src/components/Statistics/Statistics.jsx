@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 import Notification from 'components/Notification/Notification';
 import css from './Statistics.module.css'
 
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
-    const totalFeedbacks = total();
-    const positiveFeedbacksPercentage = positivePercentage();
+const Statistics = ({ good, neutral, bad, total, percent }) => {
     return (
         <div>
-            {totalFeedbacks ? (
+            {total ? (
                 <ul className={css["statistics-list"]}>
                     <li>
                         <p className={css["statistics-item__text"]}>
@@ -26,12 +24,12 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
                     </li>
                     <li>
                         <p className={css["statistics-item__text"]}>
-                            Total: <span className={css["statistics-item__value"]}>{totalFeedbacks}</span>
+                            Total: <span className={css["statistics-item__value"]}>{total}</span>
                         </p>
                     </li>
                     <li>
                         <p className={css["statistics-item__text"]}>
-                            Positive feedback: <span className={css["statistics-item__value"]}>{positiveFeedbacksPercentage}%</span>
+                            Positive feedback: <span className={css["statistics-item__value"]}>{percent}%</span>
                         </p>
                     </li>
                 </ul>
@@ -47,8 +45,8 @@ Statistics.propTypes = {
     good: PropTypes.number.isRequired,
     neutral: PropTypes.number.isRequired,
     bad: PropTypes.number.isRequired,
-    total: PropTypes.func.isRequired,
-    positivePercentage: PropTypes.func.isRequired,
+    total: PropTypes.number.isRequired,
+    percent: PropTypes.number.isRequired,
 }
 
 export default Statistics
